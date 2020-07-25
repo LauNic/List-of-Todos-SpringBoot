@@ -1,0 +1,53 @@
+// package whatever; // don't place package name!
+
+import java.io.*;
+
+class MyCode {
+	public static void main (String[] args) {
+
+    inverse(new int[]{1,2,3,4,5});
+
+    capitalize("The quick brown fox jumps over the lazy dog");
+	}
+
+  public static arr[] inverse(int[] arr ) {
+    int reverseArr[] = new int[arr.length];
+
+    int j = arr.length;
+    for(int i=0; i<arr.length; i++){
+      reverseArr[j-i-1] = arr[i];
+    }
+
+    return reverseArr;
+  }
+
+
+
+  public static String capitalize(String str) {
+
+    String[] array = str.split("\\s");
+    String[] caps = new String[str.length];
+
+    for(int i=0; i<array.length; i++){
+     char[] word = array[i].toCharArray();
+     char c = array[i].charAt(0).toUpperCase();
+     word[0] = c;
+     String capWord = new String(word);
+     caps[i]=capWord;
+    }
+
+    return Arrays.join(array, " ");
+  }
+
+  public static void testCapitalize() {
+      capitalize("");
+        capitalize("The quick brown,fox jumps\nover\tthe lazy dog");
+  }
+
+
+
+  public static void testInverse() {
+
+  }
+}
+q   a
