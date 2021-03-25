@@ -21,9 +21,8 @@ insert into todo(id, user_name, description, target_date, is_done)
 values(10010, 'analyst', 'Learn Docker Kubernetes', '2020-09-04', false);
 
 insert into todo(id, user_name, description, target_date, is_done)
-values(10011, 'lau', 'Learn Spring Boot', '2020-09-04', false);
+values(10011, 'lau', 'Learn French ', '2021-09-04', false);
 insert into todo(id, user_name, description, target_date, is_done)
-values(10012, 'lau', 'Become Angular Expert', '2020-09-04', false);
+values(10012, 'lau', 'Become Microservices Expert', '2021-09-04', false);
 insert into todo(id, user_name, description, target_date, is_done)
-values(10013, 'lau', 'Learn Docker Kubernetes', '2020-09-04', false);
-
+values(10013, 'lau', 'Learn Docker Kubernetes', '2021-09-04', false);
