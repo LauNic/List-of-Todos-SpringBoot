@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  todo-angular:
+    image: niculesculaurentiu/todo-angular:0.0.1
+      #build:
+    #context: .
+    #dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+    restart: always
+    depends_on: # Start the depends_on first
+      - todo-spring-boot
+
+  todo-spring-boot:
+    image: niculesculaurentiu/todo-spring-boot:0.0.2
+    #build:
+      #context: .
+      #dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    restart: always
+    depends_on: # Start the depends_on first
+      - my_maria
+    environment:
+      RDS_HOSTNAME: my_maria
+      RDS_PORT: 3306
+      RDS_DB_NAME: todos
+      RDS_USERNAME: usertodos
+      RDS_PASSWORD: usertodos
+    networks:
+      - todo-mariadb-network
+
+  my_maria:
+    image: mariadb:latest
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: passroot
+      MYSQL_USER: usertodos
+      MYSQL_PASSWORD: usertodos
+      MYSQL_DATABASE: todos
+    volumes:
+      - todo-mariadb-volume:/var/lib/mysql
+    networks:
+      - todo-mariadb-network
+  
+# Volumes
+volumes:
+  todo-mariadb-volume:
+
+networks:
+  todo-mariadb-network:
