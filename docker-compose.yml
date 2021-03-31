@@ -32,7 +32,7 @@ services:
       - todo-mariadb-network
 
   my_maria:
-    image: mariadb:latest
+    image: niculesculaurentiu/mariadb:latest
     ports:
       - "3306:3306"
     restart: always
