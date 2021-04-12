@@ -1,0 +1,16 @@
+MicroServices patterns
+https://dzone.com/articles/design-patterns-for-microservices-1
+https://microservices.io/patterns/microservices.html
+
+Decomposition Patterns	Integration Patterns	Database Patterns	Observability Patterns	Cross Cutting Concerns Patterns
+Decompose by Business Capability	API Gateway Pattern	Database per Service	Log Aggregation	External Configuration
+Decompose by Subdomain	Aggregator Pattern	Shared Database per Service	Performance Metrics	Service Discovery Pattern
+Decompose by Transactions	Proxy Pattern	CQRS	Distributed Tracing	Circuit Breaker Pattern
+Strangler Pattern	Gateway Routing Pattern	Event Sourcing	Health Check	Blue-Green Deployment Pattern
+Bulkhead Pattern	Chained Microservice Pattern	Saga Pattern
+Sidecar Pattern	Branch Pattern
+	Client-side UI Composition Pattern
+
+https://12factor.net/codebase
+
+Kafka - event source with DB ElasticSearch is good with distributed systems

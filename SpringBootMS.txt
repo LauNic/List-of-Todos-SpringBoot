@@ -1,0 +1,37 @@
+Spring Boot Eureka Server - Client - FeignClient
+big picture of using service discovery in a microservices architecture
+
+Eureka Server - microservices registry
+https://www.tutorialspoint.com/spring_boot/spring_boot_eureka_server.htm
+
+http://localhost:8761/
+
+
+Eureka Client - micro-service that registers to the Eureka Server
+https://www.tutorialspoint.com/spring_boot/spring_boot_service_registration_with_eureka.htm
+
+http://localhost:8080/api/bonuses/
+
+
+Feign Client - used to consume a micro-service requesting for a client name registered at the Eureka Server
+			without knowing the endpoint of the Eureka client but just his name in the Eureka registry
+https://www.baeldung.com/spring-cloud-netflix-eureka
+
+http://localhost:8181/get-bonuses
+
+
+Zuul Proxy - as gateway for routing
+			can be used to route to a micro-service or to a FeignClient endpoint
+			before routing it can also filter using ZuulFilter
+https://www.tutorialspoint.com/spring_boot/spring_boot_zuul_proxy_server_and_routing.htm
+https://www.baeldung.com/zuul-filter-modifying-response-body
+
+http://localhost:8111/through/zuul-gateway/get-bonuses
+
+
+Spring Boot Cloud Configuration Server - read properties from git uri
+https://www.tutorialspoint.com/spring_boot/spring_boot_cloud_configuration_server.htm
+https://cloud.spring.io/spring-cloud-config/multi/multi__spring_cloud_config_server.html#composite-environment-repositories
+
+http://localhost:7777/lau-feignClient/default/master
+
